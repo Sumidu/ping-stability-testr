@@ -36,7 +36,7 @@ registerDoParallel(cl)
 # Setup mini UI ----
 tt <- tktoplevel()  # Create a new toplevel window
 
-tktitle(tt) <- "Simple Dialog"  # Give the window a title
+tktitle(tt) <- "Ping-Test"  # Give the window a title
 
 # Create a variable to keep track of the state of the dialog window:
 #  If the window is active,
@@ -46,12 +46,12 @@ tktitle(tt) <- "Simple Dialog"  # Give the window a title
 #  If the window has been closed using the Cancel button or destroyed,
 #      done = 2
 done <- tclVar(0)   # tclVar() creates a Tcl variable
-label.text <- tclVar("This is a text label")
+label.text <- tclVar("Waiting...")
 # Create two buttons and for each one, set the value of the done
 # variable
 # to an appropriate value
 label.count <- tklabel(tt, textvariable = label.text)
-OK.but <- tkbutton(tt, text = "  Stop  ",
+OK.but <- tkbutton(tt, text = "  Stop Test ",
                    command = function() tclvalue(done) <- 1)
 
 
